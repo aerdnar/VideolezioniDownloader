@@ -16,9 +16,10 @@
   ],
   "content_scripts": [
     {
-      "matches": ["*://didattica.polito.it/*",
-			"*://elearning.polito.it/*"
-	  ],
+      "matches": [
+	"*://didattica.polito.it/*",
+	"*://elearning.polito.it/*"
+      ],
       "js": ["script.js"],
       "run_at": "document_end",
       "all_frames":true
