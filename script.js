@@ -3,8 +3,8 @@ if(document.URL.indexOf("videolezioni") != -1){
 		var errors = 0;
 		
 		var lessons = (document.URL.indexOf("elearning") != -1) 
-									? document.getElementsByClassName("lezioni")[1].querySelectorAll("a")
-									: document.getElementsByClassName("h5") ;
+				? document.getElementsByClassName("lezioni")[1].querySelectorAll("a")
+				: document.getElementsByClassName("h5") ;
 									
 		var div = document.createElement("div");
 		div.setAttribute("style","width:100%");
@@ -88,12 +88,12 @@ if(document.URL.indexOf("videolezioni") != -1){
 					if( index < lessons.length){
 					index++;
 					frame1.src = (document.URL.indexOf("elearning") != -1)
-												? lessons[index].getAttribute("href")
-												: lessons[index].firstElementChild.getAttribute("href");
+							? lessons[index].getAttribute("href")
+							: lessons[index].firstElementChild.getAttribute("href");
 					}
 			});
 			frame1.src = (document.URL.indexOf("elearning") != -1)
-												? lessons[index].getAttribute("href")
-												: lessons[index].firstElementChild.getAttribute("href");
+					? lessons[index].getAttribute("href")
+					: lessons[index].firstElementChild.getAttribute("href");
 		});
 }
