@@ -1,7 +1,7 @@
 {
   "name": "Videolezioni Downloader",
   "description": "Scarica tutte le videolezioni",
-  "version": "1.0",
+  "version": "1.0.1",
   "manifest_version": 2,
   "background": {
     "page": "background.html",
@@ -11,11 +11,14 @@
     "downloads",
     "background",
     "tabs",
-    "*://didattica.polito.it/*"
+    "*://didattica.polito.it/*",
+    "*://elearning.polito.it/*"
   ],
   "content_scripts": [
     {
-      "matches": ["*://didattica.polito.it/*"],
+      "matches": ["*://didattica.polito.it/*",
+			"*://elearning.polito.it/*"
+	  ],
       "js": ["script.js"],
       "run_at": "document_end",
       "all_frames":true

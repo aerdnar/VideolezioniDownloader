@@ -27,8 +27,8 @@ chrome.downloads.onChanged.addListener(
 );
 chrome.tabs.onUpdated.addListener(function (tabId, change, tab) {
 	if (tab.active) {
-		chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {chrome.browserAction.enable(tabs[0].id);
-			if (tabs[0].url == undefined || tabs[0].url.match(/(http[s]?)(:\/\/)(.{0,3}.)?(didattica.polito.it)(.*)/) == null ||  tabs[0].url.indexOf("videolezioni") == -1) 
+		chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
+			if (tabs[0].url == undefined || ( tabs[0].url.match(/(http[s]?)(:\/\/)(.{0,3}.)?(didattica.polito.it)(.*)/) == null) && tabs[0].url.match(/(http[s]?)(:\/\/)(.{0,3}.)?(elearning.polito.it)(.*)/) == null ||  tabs[0].url.indexOf("videolezioni") == -1) 
 				chrome.browserAction.setIcon({ path: 'Downloads-icon-16-off.png', tabId: tabs[0].id });
 			else {
 				chrome.browserAction.setIcon({ path: 'Downloads-icon-16.png', tabId: tabs[0].id });
