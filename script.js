@@ -3,10 +3,10 @@ if(document.URL.indexOf("video") != -1){
 		var errors = 0;
 		
 		var lessons = (document.URL.indexOf("elearning") != -1) 
-									? ( (document.URL.indexOf("videolezioni") != - 1) 
-										? document.getElementsByClassName("lezioni")[1].querySelectorAll("a")
-										: document.getElementsByClassName("lezioni")[0].querySelectorAll("a:not([class='argoLink'])") )
-									: document.getElementsByClassName("h5") ;
+				? ( (document.URL.indexOf("videolezioni") != - 1) 
+					? document.getElementsByClassName("lezioni")[1].querySelectorAll("a")
+					: document.getElementsByClassName("lezioni")[0].querySelectorAll("a:not([class='argoLink'])") )
+				: document.getElementsByClassName("h5") ;
 									
 		var style = document.createElement("style");
 		style.innerHTML = "#lessonList {background-size: contain}"
@@ -93,12 +93,12 @@ if(document.URL.indexOf("video") != -1){
 					if( index < lessons.length){
 					index++;
 					frame1.src = (document.URL.indexOf("elearning") != -1)
-												? lessons[index].getAttribute("href")
-												: lessons[index].firstElementChild.getAttribute("href");
+							? lessons[index].getAttribute("href")
+							: lessons[index].firstElementChild.getAttribute("href");
 					}
 			});
 			frame1.src = (document.URL.indexOf("elearning") != -1)
-												? lessons[index].getAttribute("href")
-												: lessons[index].firstElementChild.getAttribute("href");
+					? lessons[index].getAttribute("href")
+					: lessons[index].firstElementChild.getAttribute("href");
 		});
 }
